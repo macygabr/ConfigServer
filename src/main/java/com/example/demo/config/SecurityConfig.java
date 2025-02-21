@@ -18,25 +18,12 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf(csrf -> csrf.disable());
+
         return http.build();
     }
 
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
-    }
-
-    @Bean
-    public UserDetailsService userDetailsService() {
-        return username -> {
-            if ("admin".equals(username)) {
-                return User.withUsername("admin")
-                        .password(passwordEncoder().encode("admin"))
-                        .roles("USER")
-                        .build();
-            } else {
-                throw new UsernameNotFoundException("User not found: " + username);
-            }
-        };
     }
 }
