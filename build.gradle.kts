@@ -21,13 +21,12 @@ extra["springCloudVersion"] = "2024.0.0"
 
 dependencies {
 	implementation("org.springframework.cloud:spring-cloud-config-server")
+	implementation("org.springframework.boot:spring-boot-starter-security")
+	implementation("org.springframework.boot:spring-boot-starter-actuator")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
-	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
-	implementation("org.springframework.boot:spring-boot-starter-security:3.4.1")
-	implementation ("org.springframework.boot:spring-boot-starter-actuator")
-	implementation ("org.springframework.boot:spring-boot-starter-web")
-	implementation ("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0")
 }
+
+
 
 dependencyManagement {
 	imports {
