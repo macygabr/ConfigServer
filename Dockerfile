@@ -11,4 +11,4 @@ WORKDIR /app
 COPY . .
 RUN gradle build
 EXPOSE 8888
-CMD ["java", "-jar", "./build/libs/ConfigServer-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "./build/libs/ConfigServer-0.0.1.jar"]
